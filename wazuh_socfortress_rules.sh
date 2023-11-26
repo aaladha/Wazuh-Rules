@@ -6,15 +6,6 @@ clear
 ## Continue?
 
 ## Check if system is based on yum or apt-get
-while true; do
-    read -p "Do you wish to configure Wazuh with the SOCFortress ruleset? WARNING - This script will replace all of your current custom Wazuh Rules. Please proceed with caution and it is recommended to manually back up your rules... continue? " yn
-    case $yn in
-        [Yy]* ) break;;
-        [Nn]* ) exit;;
-        * ) echo "Please answer yes or no.";;
-    esac
-done
-
 if [ -n "$(command -v yum)" ]; then
     sys_type="yum"
     sep="-"
